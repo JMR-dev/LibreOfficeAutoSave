@@ -5,7 +5,7 @@ description = "LibreOffice AutoSave Extension"
 authors = [
     {name = "Jason Ross",email = "jason.ross841@gmail.com"}
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.10"
 dependencies = [
 ]
 
