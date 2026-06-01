@@ -1,0 +1,22 @@
+[project]
+name = "libreoffice-autosave"
+version = "0.1.0"
+description = "LibreOffice AutoSave Extension"
+authors = [
+    {name = "Jason Ross",email = "jason.ross841@gmail.com"}
+]
+requires-python = ">=3.14"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)",
+    "black (>=26.5.1,<27.0.0)",
+    "isort (>=8.0.1,<9.0.0)"
+]
