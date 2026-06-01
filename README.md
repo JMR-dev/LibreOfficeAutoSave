@@ -9,6 +9,36 @@ A lightweight, background-running extension for LibreOffice that automatically s
 - **Atomic Backups:** Before triggering LibreOffice's internal synchronous `.store()`, the extension executes an atomic file-copy of the last known saved state to a hidden `.bak` file (e.g., `.filename.bak`). This protects your data payload from corruption if your OS or LibreOffice crashes during a complex write cycle.
 - **Safe Evaluation:** Will not blindly save new documents that have not been given an initial file path location, protecting you from unexpected file generation.
 
+## Automatic Installation
+
+**For Windows (PowerShell):**
+```powershell
+# Download the latest release
+Invoke-WebRequest -Uri "https://github.com/JMR-dev/LibreOfficeAutoSave/releases/latest/download/AutoSave.oxt" -OutFile "AutoSave.oxt"
+
+# Install the extension
+& "C:\Program Files\LibreOffice\program\unopkg.com" add -f AutoSave.oxt
+
+# Clean up the downloaded file
+Remove-Item AutoSave.oxt
+```
+
+**For macOS / Linux (Bash):**
+```bash
+# Download the latest release
+curl -LO https://github.com/JMR-dev/LibreOfficeAutoSave/releases/latest/download/AutoSave.oxt
+
+# Install the extension
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    /Applications/LibreOffice.app/Contents/MacOS/unopkg add -f AutoSave.oxt
+else
+    unopkg add -f AutoSave.oxt
+fi
+
+# Clean up the downloaded file
+rm AutoSave.oxt
+```
+
 ## Manual Installation
 
 1. Grab the compiled `AutoSave.oxt` file from the `dist/` directory or the latest release.
